@@ -114,6 +114,7 @@ class All_Traveler_Hotels_Admin {
 		<?php
 	}
 	function api_settings(){
-		echo 'API Credentials';
+		require_once 'partials/all_traveler_hotels-api-config.php';
+
 	}
 }
