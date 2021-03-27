@@ -102,26 +102,11 @@ class All_Traveler_Hotels_Admin {
 	}
 
 	public function add_menus(){
-		// add_menu_page('All Traveler Hotels', 'All Traveler Hotels', 'manage_options', 'all_traveler_hotels');
-		// // add_submenu_page( 'all_traveler_hotels', 'All Traveler Hotels', 'All Traveler Hotels', [$this,'list_page'], 'my-top-level-slug');
-		// add_menu_page(
-		// 	__( 'Sample page', 'my-textdomain' ),
-		// 	__( 'Sample menu', 'my-textdomain' ),
-		// 	'manage_options',
-		// 	'sample-page',
-		// 	[$this,'list_page'],
-		// 	'dashicons-schedule',
-		// );
-		// add_submenu_page( 'sample-page', 'API Credentials', 'API Credentials', [$this,'api_settings'], 'all_traveler_hotels/settings');
+		add_menu_page( 'All Travelers Hotels', 'All Travelers Hotels', 'manage_options', 'all_traveler_hotels/all_traveler_hotels.php', [$this,'myplguin_admin_page'], 'dashicons-tickets');
+		add_submenu_page( 'all_traveler_hotels/all_traveler_hotels.php', 'Api Configuration', 'Api Configuration', 'manage_options', 'all_traveler_hotels/api_settings.php', [$this,'api_settings'] );
 
-
-		add_menu_page('My Custom Page', 'My Custom Page', [$this,'manage_options'], 'my-top-level-slug');
-add_submenu_page( 'my-top-level-slug', 'My Custom Page', 'My Custom Page',
-    [$this,'manage_options'], 'my-top-level-slug');
-add_submenu_page( 'my-top-level-slug', 'My Custom Submenu Page', 'My Custom Submenu Page',
-    [$this,'manage_options'], 'my-secondary-slug');
 	}
-	function manage_options() {
+	function myplguin_admin_page() {
 		?>
 		<h1>
 			<?php esc_html_e( 'Welcome to my custom admin page.', 'my-plugin-textdomain' ); ?>
